@@ -29,6 +29,8 @@ app.get('/check-health', (req, res) => {
     res.send('Successful response.');
 });
 
+registerRoutes(app);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));
@@ -43,8 +45,6 @@ mongoose.connection.on(`error`, (err) => {
     console.error(`Failed to Connect DB: ${err}`);
     process.exit(-1);
 })
-
-registerRoutes(app);
 
 // error handler
 app.use(function(err, req, res, next) {

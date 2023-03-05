@@ -2,7 +2,6 @@
 /*eslint no-invalid-this:0*/
 import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
-// mongoose.Promise = require('bluebird');
 
 var UserSchema = new Schema({
   firstName: {
@@ -17,7 +16,7 @@ var UserSchema = new Schema({
   userName: {
     type: String
   },
-  password: {
+  password: { // Need To Encrypt The Password
     type: String
   },
   Address: {
